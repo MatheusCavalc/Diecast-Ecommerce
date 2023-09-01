@@ -63,7 +63,7 @@ class CarResource extends Resource
                 Tables\Columns\ToggleColumn::make('published'),
                 Tables\Columns\ImageColumn::make('image')
                     ->disk('public')
-                    ->circular(),
+                    ->square(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
