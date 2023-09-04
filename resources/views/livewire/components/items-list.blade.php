@@ -6,8 +6,7 @@ use App\Models\Car;
 
 state('cars');
 
-$addToCart = function (Car $sneaker, $quantity)
-{
+$addToCart = function (Car $sneaker, $quantity) {
     $cart = session()->get('cart');
 
     if (!$cart) {
@@ -40,7 +39,7 @@ $addToCart = function (Car $sneaker, $quantity)
         session()->put('cart', $cart);
     }
 
-        $this->dispatch('cart-updated');
+    $this->dispatch('cart-updated');
 };
 
 ?>
@@ -55,12 +54,12 @@ $addToCart = function (Car $sneaker, $quantity)
     }
 }">
     <div class="mt-16">
-        <h3 class="text-gray-600 text-2xl font-medium">Oi</h3>
+        <h3 class="text-gray-600 text-2xl font-medium">{{ $cars[0]->category->name }}</h3>
         <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
 
             @foreach ($cars as $car)
                 <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover"
+                    <div class="flex items-end justify-end h-56 w-full bg-cover bg-center"
                         style="background-image: url({{ Storage::url($car->image) }})">
                         <button wire:click="addToCart({{ $car->id }}, 1)" x-on:click="showNotification()"
                             class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
@@ -72,10 +71,12 @@ $addToCart = function (Car $sneaker, $quantity)
                             </svg>
                         </button>
                     </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">{{ $car->name }}</h3>
-                        <span class="text-gray-500 mt-2">${{ $car->price }}</span>
-                    </div>
+                    <a href="/car/{{ $car->id }}/{{ $car->slug }}" wire:navigate>
+                        <div class="px-5 py-3">
+                            <h3 class="text-gray-700 uppercase">{{ $car->name }}</h3>
+                            <span class="text-gray-500 mt-2">${{ $car->price }}</span>
+                        </div>
+                    </a>
                 </div>
             @endforeach
 
