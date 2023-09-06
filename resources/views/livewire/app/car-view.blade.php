@@ -8,7 +8,7 @@
                     <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ $car->category->name }}</h2>
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $car->name }}</h1>
                     <div class="flex justify-end mb-4">
-                        {{--<span class="flex items-center">
+                        {{-- <span class="flex items-center">
                             <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500"
                                 viewBox="0 0 24 24">
@@ -44,7 +44,7 @@
                                 </path>
                             </svg>
                             <span class="text-gray-600 ml-3">4 Reviews</span>
-                        </span>--}}
+                        </span> --}}
                         <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
                             <a class="text-gray-500">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -70,11 +70,10 @@
                             </a>
                         </span>
                     </div>
-                    <p class="leading-relaxed">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha
-                        taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage
-                        brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle
-                        pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.</p>
-                    {{--<div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+                    <div x-data="{ description: '{{$car->description}}' }">
+                        <span class="leading-relaxed" x-html="description"></span>
+                    </div>
+                    {{-- <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                         <div class="flex">
                             <span class="mr-3">Color</span>
                             <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
@@ -102,7 +101,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>--}}
+                    </div> --}}
                     <div class="flex mt-6">
                         @if ($car->in_promotion)
                             <span

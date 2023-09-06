@@ -15,6 +15,7 @@ class Car extends Model
         'image',
         'slug',
         'name',
+        'description',
         'price',
         'promotion_price',
         'in_promotion'

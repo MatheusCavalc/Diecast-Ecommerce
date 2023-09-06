@@ -40,6 +40,24 @@ class CarResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\RichEditor::make('description')
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'undo',
+                    ])
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(2000),
@@ -67,8 +85,8 @@ class CarResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ->searchable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('promotion_price')
