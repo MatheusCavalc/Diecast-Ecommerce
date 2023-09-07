@@ -57,7 +57,7 @@ class CarView extends Component
     #[Layout('layouts.main')]
     public function render()
     {
-        $other_cars = Car::all();
+        $other_cars = Car::where('id', '!=', $this->car->id)->take(4)->get();
 
         return view('livewire.app.car-view', compact('other_cars'));
     }

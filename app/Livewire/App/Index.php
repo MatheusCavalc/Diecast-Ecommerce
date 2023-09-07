@@ -14,7 +14,7 @@ class Index extends Component
     public function render()
     {
         $car = Car::all()->first();
-        $cars = Car::all();
+        $cars = Car::where('category_id', 1)->take(4)->get();
 
         return view('livewire.app.index', compact('car', 'cars'));
     }
