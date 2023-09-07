@@ -57,6 +57,8 @@ class CarView extends Component
     #[Layout('layouts.main')]
     public function render()
     {
-        return view('livewire.app.car-view');
+        $other_cars = Car::all();
+
+        return view('livewire.app.car-view', compact('other_cars'));
     }
 }

@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <livewire:components.items-list :cars="$cars" />
+            <livewire:components.items-list :cars="$cars" :header="true"/>
 
         </div>
     </main>

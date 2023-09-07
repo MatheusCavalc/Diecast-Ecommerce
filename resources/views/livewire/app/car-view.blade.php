@@ -70,7 +70,7 @@
                             </a>
                         </span>
                     </div>
-                    <div x-data="{ description: '{{$car->description}}' }">
+                    <div x-data="{ description: '{{ $car->description }}' }">
                         <span class="leading-relaxed" x-html="description"></span>
                     </div>
                     {{-- <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
@@ -133,5 +133,15 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="container mx-auto pb-10">
+        <div>
+            <p class="text-2xl">
+                You may also like
+            </p>
+        </div>
+
+        <livewire:components.items-list :cars="$other_cars" :header="false" />
     </section>
 </div>

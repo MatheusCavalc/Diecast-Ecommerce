@@ -4,7 +4,10 @@ use function Livewire\Volt\{state};
 use Livewire\Volt\Component;
 use App\Models\Car;
 
-state('cars');
+state([
+    'cars',
+    'header'
+]);
 
 $addToCart = function (Car $sneaker, $quantity) {
     $cart = session()->get('cart');
@@ -54,7 +57,10 @@ $addToCart = function (Car $sneaker, $quantity) {
     }
 }">
     <div class="mt-16">
-        <h3 class="text-gray-600 text-2xl font-medium">{{ $cars[0]->category->name }}</h3>
+        @if ($header)
+            <h3 class="text-gray-600 text-2xl font-medium">{{ $cars[0]->category->name }}</h3>
+        @endif
+
         <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
 
             @foreach ($cars as $car)

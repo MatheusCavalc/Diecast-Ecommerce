@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Livewire\App\Index;
 use App\Livewire\App\CarView;
+use App\Livewire\App\CheckoutView;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Index::class);
 
 Route::get('/car/{id}/{slug}', CarView::class);
+
+Route::get('/checkout', CheckoutView::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
