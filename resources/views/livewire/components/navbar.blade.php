@@ -17,7 +17,7 @@
                     <div class="w-full text-gray-700 md:text-center text-2xl font-semibold">
                         Brand
                     </div>
-                    <div class="flex items-center justify-end w-full">
+                    <div class="flex items-center justify-end w-full md:gap-2">
                         <button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none mx-4 sm:mx-0">
                             <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,6 +26,8 @@
                                 </path>
                             </svg>
                         </button>
+
+                        <livewire:components.user-icon />
 
                         <div class="flex sm:hidden">
                             <button @click="isOpen = !isOpen" type="button"
@@ -42,8 +44,10 @@
                 </div>
                 <nav :class="isOpen ? '' : 'hidden'" class="sm:flex sm:justify-center sm:items-center mt-4">
                     <div class="flex flex-col sm:flex-row">
-                        <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/" wire:navigate>Home</a>
-                        <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/shop" wire:navigate>Shop</a>
+                        <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/"
+                            wire:navigate>Home</a>
+                        <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/shop"
+                            wire:navigate>Shop</a>
                         <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Categories</a>
                         <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Contact</a>
                         <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">About</a>
