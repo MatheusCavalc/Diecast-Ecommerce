@@ -8,9 +8,22 @@ use Livewire\Attributes\Title;
 use Livewire\WithPagination;
 use Livewire\Component;
 
-class ShopView extends Component
+class SearchView extends Component
 {
     use WithPagination;
+
+    public $search = '';
+
+    public $cars = '';
+
+    public function mount($search)
+    {
+        $this->search = $search;
+
+        $this->cars = Car::query()
+            ->where('name', 'LIKE', "%{$this->search}%")
+            ->get();
+    }
 
     public function addToCart(Car $sneaker, $quantity)
     {
@@ -49,12 +62,10 @@ class ShopView extends Component
         $this->dispatch('cart-updated');
     }
 
-    #[Title('Home')]
     #[Layout('layouts.main')]
+    #[Title('Home')]
     public function render()
     {
-        return view('livewire.app.shop-view', [
-            'cars' => Car::paginate(4)
-        ]);
+        return view('livewire.app.search-view');
     }
 }

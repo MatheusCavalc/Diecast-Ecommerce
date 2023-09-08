@@ -6,6 +6,7 @@ use App\Livewire\App\CarView;
 use App\Livewire\App\CheckoutView;
 use App\Livewire\App\MyOrdersView;
 use App\Livewire\App\OrderDetailsView;
+use App\Livewire\App\SearchView;
 use App\Livewire\App\ShopView;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::get('/', Index::class);
 Route::get('/shop', ShopView::class);
 
 Route::get('/car/{id}/{slug}', CarView::class);
+
+Route::get('/search/car/{search}', SearchView::class);
 
 Route::get('my-orders', MyOrdersView::class)->middleware('auth');
 
