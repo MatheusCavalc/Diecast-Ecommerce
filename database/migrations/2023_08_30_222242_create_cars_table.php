@@ -19,6 +19,11 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained();
 
             $table->string('image');
+
+            $table->string('image_2');
+            $table->string('image_3');
+            $table->string('image_4');
+
             $table->string('name');
             $table->longText('description');
 

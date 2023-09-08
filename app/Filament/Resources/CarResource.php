@@ -37,6 +37,24 @@ class CarResource extends Resource
                     ->visibility('public')
                     ->image()
                     ->required(),
+                Forms\Components\FileUpload::make('image_2')
+                    ->disk('public')
+                    ->directory('cars')
+                    ->visibility('public')
+                    ->image()
+                    ->required(),
+                Forms\Components\FileUpload::make('image_3')
+                    ->disk('public')
+                    ->directory('cars')
+                    ->visibility('public')
+                    ->image()
+                    ->required(),
+                Forms\Components\FileUpload::make('image_4')
+                    ->disk('public')
+                    ->directory('cars')
+                    ->visibility('public')
+                    ->image()
+                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

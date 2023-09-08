@@ -13,6 +13,11 @@ class Car extends Model
         'published',
         'category_id',
         'image',
+
+        'image_2',
+        'image_3',
+        'image_4',
+
         'slug',
         'name',
         'description',

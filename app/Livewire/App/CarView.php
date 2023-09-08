@@ -11,9 +11,18 @@ class CarView extends Component
 {
     public Car $car;
 
+    public $image;
+
     public function mount($id, $slug)
     {
         $this->car = Car::findOrFail($id);
+
+        $this->imageView($this->car->image);
+    }
+
+    public function imageView($image_select)
+    {
+        $this->image = $image_select;
     }
 
     public function addToCart(Car $sneaker, $quantity)
