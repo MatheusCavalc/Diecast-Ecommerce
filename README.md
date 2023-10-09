@@ -20,7 +20,7 @@ cp .env.example .env
 ```shell
 php artisan key:generate
 ```
-- Execute o comando abaixo para popular o banco de dados com as tabelas necessarias para a aplicacao:
+- Execute o comando abaixo para popular o banco de dados com as tabelas necessárias para a aplicação:
 ```shell
 php artisan migrate
 ```
@@ -36,7 +36,7 @@ php artisan storage:link
 ```shell
 php artisan serve
 ```
-- Para compilar os arquivos da aplicacao execute o comando abaixo em outro terminal:
+- Para compilar os arquivos da aplicação execute o comando abaixo em outro terminal:
 ```shell
 npm run dev
 ```
