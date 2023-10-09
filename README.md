@@ -6,7 +6,7 @@ O projeto se utiliza de PHP 8.1, portanto, é necessário que ele esteja instala
 
 - Faça um clone do projeto para sua máquina local
 ```shell
-git clone https://github.com/MatheusCavalc/Task-App
+git clone https://github.com/MatheusCavalc/Diecast-Ecommerce
 ```
 - Navegue até o diretório raiz do projeto clonado e execute o comando abaixo para instalar as dependências do projeto:
 ```shell
