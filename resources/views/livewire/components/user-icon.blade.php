@@ -10,7 +10,7 @@ state([
 
 <div x-data="{ open: false }">
     <div class="mt-1.5">
-        <button @click="open = !open" class="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+        <button @click="open = !open" class="text-gray-600 focus:outline-none ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round"

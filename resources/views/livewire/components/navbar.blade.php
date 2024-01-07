@@ -17,8 +17,8 @@
                     <div class="w-full text-gray-700 md:text-center text-2xl font-semibold">
                         Brand
                     </div>
-                    <div class="flex items-center justify-end w-full md:gap-2">
-                        <button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+                    <div class="flex items-center justify-end w-full gap-2">
+                        <button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none">
                             <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -67,7 +67,7 @@
             </div>
         </header>
         <div :class="cartOpen ? 'translate-x-0 ease-out' : 'translate-x-full ease-in'"
-            class="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
+            class="fixed right-0 z-40 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-medium text-gray-700">Your cart</h3>
                 <button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none">

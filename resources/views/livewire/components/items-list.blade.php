@@ -58,10 +58,10 @@ $addToCart = function (Car $sneaker, $quantity) {
 }">
     <div class="mt-16">
         @if ($header)
-            <h3 class="text-gray-600 text-2xl font-medium">{{ $cars[0]->category->name }}</h3>
+            <h3 class="text-gray-600 text-2xl font-medium mx-3">{{ $cars[0]->category->name }}</h3>
         @endif
 
-        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 mx-3 lg:mx-0">
 
             @foreach ($cars as $car)
                 <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden relative">

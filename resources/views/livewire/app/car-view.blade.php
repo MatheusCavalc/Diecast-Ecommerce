@@ -5,7 +5,7 @@
             <img alt="ecommerce" class="w-full object-cover object-center rounded border border-gray-200"
                 src="{{ Storage::url($image) }}">
 
-            <div class="flex gap-4 mt-5">
+            <div class="flex justify-center gap-4 mt-5">
                 <button wire:click="imageView('{{ $car->image }}')">
                     <img class="h-10 w-20 object-cover" src="{{ Storage::url($car->image) }}" alt="">
                 </button>
@@ -153,9 +153,9 @@
 
     </section>
 
-    <section class="container md:mx-auto pb-10 mx-3">
+    <section class="container md:mx-auto pb-10 lg:mx-3">
         <div>
-            <p class="text-2xl">
+            <p class="text-2xl mx-3">
                 You may also like
             </p>
         </div>
