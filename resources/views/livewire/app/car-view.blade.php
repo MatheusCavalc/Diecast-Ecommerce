@@ -1,32 +1,40 @@
-<div>
-    <section class="grid md:grid-cols-2 md:gap-8 mx-3 md:mx-40 my-20">
+<div x-data="{
+    open: false,
+    showNotification: function() {
+        this.open = true;
+        setTimeout(() => {
+            this.open = false;
+        }, 3000);
+    }
+}">
+    <section class="grid mx-3 my-20 md:grid-cols-2 md:gap-8 md:mx-40">
 
         <div>
-            <img alt="ecommerce" class="w-full object-cover object-center rounded border border-gray-200"
+            <img alt="ecommerce" class="object-cover object-center w-full border border-gray-200 rounded"
                 src="{{ Storage::url($image) }}">
 
             <div class="flex justify-center gap-4 mt-5">
                 <button wire:click="imageView('{{ $car->image }}')">
-                    <img class="h-10 w-20 object-cover" src="{{ Storage::url($car->image) }}" alt="">
+                    <img class="object-cover w-20 h-10" src="{{ Storage::url($car->image) }}" alt="">
                 </button>
 
                 <button wire:click="imageView('{{ $car->image_2 }}')">
-                    <img class="h-10 w-20 object-cover" src="{{ Storage::url($car->image_2) }}" alt="">
+                    <img class="object-cover w-20 h-10" src="{{ Storage::url($car->image_2) }}" alt="">
                 </button>
 
                 <button wire:click="imageView('{{ $car->image_3 }}')">
-                    <img class="h-10 w-20 object-cover" src="{{ Storage::url($car->image_3) }}" alt="">
+                    <img class="object-cover w-20 h-10" src="{{ Storage::url($car->image_3) }}" alt="">
                 </button>
 
                 <button wire:click="imageView('{{ $car->image_4 }}')">
-                    <img class="h-10 w-20 object-cover" src="{{ Storage::url($car->image_4) }}" alt="">
+                    <img class="object-cover w-20 h-10" src="{{ Storage::url($car->image_4) }}" alt="">
                 </button>
             </div>
         </div>
 
         <div class="mt-5 md:mt-0">
-            <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ $car->category->name }}</h2>
-            <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $car->name }}</h1>
+            <h2 class="text-sm tracking-widest text-gray-500 title-font">{{ $car->category->name }}</h2>
+            <h1 class="mb-1 text-3xl font-medium text-gray-900 title-font">{{ $car->name }}</h1>
             <div class="flex justify-end mb-4">
                 {{-- <span class="flex items-center">
                         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
@@ -63,9 +71,9 @@
                                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
                             </path>
                         </svg>
-                        <span class="text-gray-600 ml-3">4 Reviews</span>
+                        <span class="ml-3 text-gray-600">4 Reviews</span>
                     </span> --}}
-                <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+                <span class="flex py-2 pl-3 ml-3 border-l-2 border-gray-200">
                     <a class="text-gray-500">
                         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             class="w-5 h-5" viewBox="0 0 24 24">
@@ -93,27 +101,27 @@
             <div x-data="{ description: '{{ $car->description }}' }">
                 <span class="leading-relaxed" x-html="description"></span>
             </div>
-            {{-- <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+            {{-- <div class="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-200">
                     <div class="flex">
                         <span class="mr-3">Color</span>
-                        <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                        <button class="w-6 h-6 border-2 border-gray-300 rounded-full focus:outline-none"></button>
                         <button
-                            class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                            class="w-6 h-6 ml-1 bg-gray-700 border-2 border-gray-300 rounded-full focus:outline-none"></button>
                         <button
-                            class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                            class="w-6 h-6 ml-1 bg-red-500 border-2 border-gray-300 rounded-full focus:outline-none"></button>
                     </div>
-                    <div class="flex ml-6 items-center">
+                    <div class="flex items-center ml-6">
                         <span class="mr-3">Size</span>
                         <div class="relative">
                             <select
-                                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
+                                class="py-2 pl-3 pr-10 text-base border border-gray-400 rounded appearance-none focus:outline-none focus:border-red-500">
                                 <option>SM</option>
                                 <option>M</option>
                                 <option>L</option>
                                 <option>XL</option>
                             </select>
                             <span
-                                class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                                class="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center text-gray-600 pointer-events-none">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" class="w-4 h-4" viewBox="0 0 24 24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -124,15 +132,15 @@
                 </div> --}}
             <div class="flex mt-6">
                 @if ($car->in_promotion)
-                    <span class="title-font font-medium text-2xl text-gray-900">${{ $car->promotion_price }}</span>
+                    <span class="text-2xl font-medium text-gray-900 title-font">${{ $car->promotion_price }}</span>
                 @else
-                    <span class="title-font font-medium text-2xl text-gray-900">${{ $car->price }}</span>
+                    <span class="text-2xl font-medium text-gray-900 title-font">${{ $car->price }}</span>
                 @endif
 
-                <button wire:click="addToCart({{ $car->id }}, 1)"
-                    class="flex ml-auto text-white bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded">
-                    <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <button wire:click="addToCart({{ $car->id }}, 1)" x-on:click="showNotification()"
+                    class="flex px-6 py-2 ml-auto text-white bg-blue-600 border-0 rounded focus:outline-none hover:bg-blue-500">
+                    <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path
                             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
                         </path>
@@ -140,7 +148,7 @@
                 </button>
 
                 <button
-                    class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                    class="inline-flex items-center justify-center w-10 h-10 p-0 ml-4 text-gray-500 bg-gray-200 border-0 rounded-full">
                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         class="w-5 h-5" viewBox="0 0 24 24">
                         <path
@@ -153,13 +161,17 @@
 
     </section>
 
-    <section class="container md:mx-auto pb-10 lg:mx-3">
+    <section class="container pb-10 md:mx-auto lg:mx-3">
         <div>
-            <p class="text-2xl mx-3">
+            <p class="mx-3 text-2xl">
                 You may also like
             </p>
         </div>
 
         <livewire:components.items-list :cars="$other_cars" :header="false" />
     </section>
+
+    <div x-show="open" x-transition.opacity>
+        <livewire:components.toast-notification />
+    </div>
 </div>

@@ -10,7 +10,7 @@ state([
 
 <div x-data="{ open: false }">
     <div class="mt-1.5">
-        <button @click="open = !open" class="text-gray-600 focus:outline-none ">
+        <button @click="open = !open" class="text-gray-600 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -23,7 +23,7 @@ state([
         x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-        class="absolute z-40 mt-2 md:mt-0 mr-2 right-0 font-normal bg-white rounded-lg shadow" id="dropdown-user">
+        class="absolute right-0 z-40 mt-2 mr-2 font-normal bg-white rounded-lg shadow md:mt-0" id="dropdown-user">
 
         <div class="py-3">
             @auth
